@@ -1,4 +1,4 @@
-<img width="1400" height="559" alt="image" src="https://github.com/user-attachments/assets/cdc8933f-6a82-4a36-8c1f-aaf98482a9f7" />### Task "Retrowave Radio"
+### Task "Retrowave Radio"
 
 Difficulty: Easy
 
