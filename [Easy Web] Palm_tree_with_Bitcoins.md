@@ -1,6 +1,7 @@
 ### Task "Palm tree with Bitcoins"
 
 Difficulty: Easy
+
 Category: Web
 
 #### Analysis:
