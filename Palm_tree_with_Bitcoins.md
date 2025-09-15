@@ -5,7 +5,7 @@
 
 #### Analysis:
 
-Here we see shop web-application, that enables us to by some products. Back-end of the server is written on javascript and given to us, so we can examine code.
+Here we see shop web-application, that enables us to buy some products. Back-end of the server is written on javascript and given to us, so we can examine code.
 Lets check the following function:
 
 ```javascript
@@ -29,16 +29,16 @@ function parseSlice(sliceCode) {
 }
 ```
 
-We can control this input. But there is some restrictions about our input. The input does not allowed to be negative to finiite big or small. But they missed one moment, I mean, 
+We can control this input. But there is some restrictions about our input. The input does not allowed to be negative or to be finite big or small. But they missed one moment, I mean, 
 they do not except division on zero. In javascript, if you divide 1 over 0 you get Infinity and if you divide 1 over -0 you get -Infinity. The total basket is calculated as a sum of prices of each product. 
-What will be if you sum Infinity and -Infinity in javascript? Yep, you will get NaN, an empty value. So you easily can checkout and make your balance also NaN.
+What will be if you sum Infinity and -Infinity in javascript? Yep, you will get NaN, an empty value.
 
 But we know, that any number is not greater or smaller than NaN. It's simpy equals to false. There is next misconfiguration:
 ```javascript
 if (!(session.balanceSats < total)){...}
 ```
 
-The application should check balance as (session.balanceSats > total), but it does it in the way showed above. so it allows to make purchase, because:
+The application should check balance as (session.balanceSats > total), but it does it in the opposite way. so it allows to make purchase, because:
 1) NaN < total - false
 2) !(false) - true
 and success, we did our purchase and got flag in the response!
