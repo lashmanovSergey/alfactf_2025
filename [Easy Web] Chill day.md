@@ -38,9 +38,9 @@ We can see comment. It says to developers to disallow metadata service. So our f
 
 ##### step 1 (DNS rebinding to get metadata):
 From the code fragment we understand that we cannot easily access metadata, because it checks for it. Because server has own proxy server to validate ip, we can try DNS rebinding attack.
-I configured the following server:
+I configured the following server, which always switches between google server and metadata server. The idea is simillar to race condition. I mean, we wanna pass proxy server with google 
+ip and then switch ip to metadata and get it content:
 <img width="627" height="75" alt="image" src="https://github.com/user-attachments/assets/16e189eb-3d2b-47f8-9236-59a7d2142956" />
-Which always switches between google server and metadata server. The idea is simillar to race condition. I mean, we wanna pass proxy server with google ip and then switch ip to metadata and get it content.
 
 We sent the following request:
 <img width="823" height="325" alt="image" src="https://github.com/user-attachments/assets/a8c57004-b273-4db1-a15b-dd3a046c3883" />
